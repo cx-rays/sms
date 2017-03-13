@@ -1,0 +1,11 @@
+cron4j=task1,task2
+task1.cron=*/30 * * * *
+task1.class=com.opssino.sms.cron4j.SendErrorMessage
+task1.daemon=true
+task1.enable=true
+
+
+task2.cron=*/6 * * * *
+task2.class=com.opssino.sms.cron4j.SearchCSQ
+task2.daemon=true
+task2.enable=true

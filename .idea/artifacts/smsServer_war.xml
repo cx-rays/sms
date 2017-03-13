@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smsServer:war">
+    <output-path>$PROJECT_DIR$/smsServer/target</output-path>
+    <root id="archive" name="smsServer-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="smsServer:war exploded" />
+    </root>
+  </artifact>
+</component>
