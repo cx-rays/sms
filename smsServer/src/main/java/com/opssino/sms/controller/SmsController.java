@@ -68,9 +68,7 @@ public class SmsController extends Controller {
 		ts.setPhoneNumber(phoneNumber);
 		ts.setMESSAGE(message);
 		boolean sendStatus=PropKit.use("sms.properties").getBoolean("sendStatus");
-		if(sendStatus){
-			MainConfig.workq.add(ts);
-		}
+		MainConfig.addWorkQueue(ts);
 		Logger.getLogger("receivefile").info(sdf.format(new Date()) + "接受到发给["+phoneNumber+"]的消息,消息正文为["+message+"],发送开关为["+sendStatus+"]");
 		if (logger.isDebugEnabled()) {
 			logger.debug("sendMessage() - end");
@@ -103,10 +101,10 @@ public class SmsController extends Controller {
 			logger.debug("queryTabData() - end");
 		}
 	}
-	public void searchCSQ(){
-		
-		renderJson(PyUtil.searchCSQ("python D:\\git\\SmsServerJfinal\\csq.py"));
-	}
+//	public void searchCSQ(){
+//
+//		//renderJson(PyUtil.searchCSQ("python D:\\git\\SmsServerJfinal\\csq.py"));
+//	}
 	
 
 	public void smslist() {
@@ -136,8 +134,8 @@ public class SmsController extends Controller {
 			logger.debug("saveSms() - end");
 		}
 	}
-	public void getSimple(){
-		renderJson(PyUtil.restartModel("", ""));
-	}
+//	public void getSimple(){
+//		renderJson(PyUtil.restartModel("", ""));
+//	}
 
 }

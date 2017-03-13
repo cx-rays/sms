@@ -71,7 +71,8 @@ public class SendMessageThread implements Runnable {
 					}
 					boolean sendStatus=PropKit.use("sms.properties").getBoolean("sendStatus");
 					if(sendStatus){
-						MainConfig.workq.add(tSmsLogs);
+						MainConfig.addWorkQueue(tSmsLogs);//workq.add(tSmsLogs);
+
 					}
 				}
 				

@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.jfinal.aop.Invocation;
 import com.jfinal.aop.PrototypeInterceptor;
+import com.jfinal.kit.LogKit;
 import com.mysql.jdbc.StringUtils;
 import com.opssino.sms.controller.SmsController;
 
@@ -55,6 +56,7 @@ public class TSmsLogsInterceptor extends PrototypeInterceptor {
 		s.setAttr("tsmsLogsCot", this);
 		s.t=this;
 		inv.invoke();
+
 		
 	}
 	private void init(Invocation ai) {
@@ -66,7 +68,7 @@ public class TSmsLogsInterceptor extends PrototypeInterceptor {
 		pageNumber=s.getParaToInt("pageNumber",1);
 		pageSize=s.getParaToInt("pageSize",20);
 		message=s.getPara("message");
-		
+
 	}
 	
 	public void buildSql(StringBuilder sql, List<Object> paras) {

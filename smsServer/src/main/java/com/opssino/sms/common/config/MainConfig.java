@@ -88,7 +88,6 @@ public class MainConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configInterceptor(Interceptors me) {
-		
 	}
 	/**
 	 * 配置全局处理器
@@ -117,8 +116,13 @@ public class MainConfig extends JFinalConfig {
 	@Override
 	public void beforeJFinalStop() {
 	//	SmsMain.close();
-		System.out.printf("%d",100);
+	//	System.out.printf("%d",100);
 		super.beforeJFinalStop();
+	}
+	public static void addWorkQueue(TSmsLogs tSmsLogs){
+		if(sendStatus){
+			workq.add(tSmsLogs);
+		}
 	}
 
 }
