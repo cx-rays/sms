@@ -14,7 +14,7 @@
     <packaging>war</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jfinal.version>3.0</jfinal.version>
+        <jfinal.version>4.9.11</jfinal.version>
         <junit.version>4.12</junit.version>
     </properties>
 
